@@ -1,0 +1,40 @@
+Home_Preview
+# report_generator.py
+
+report_data = {
+    "resort_name": "Sunset Bay Resort",
+    "date": "April 21, 2025",
+    "total_bookings": 57,
+    "occupancy_rate": "85%",
+    "revenue": "$12,450",
+    "top_room": "Ocean View Suite"
+}
+html_template
+html_template = f"""
+<html>
+<head>
+    <title>{report_data['resort_name']} - Daily Report</title>
+    <style>
+        body {{ font-family: Arial, sans-serif; margin: 40px; }}
+        .report-box {{ border: 1px solid #ccc; padding: 20px; border-radius: 10px; }}
+        h1 {{ color: #2c3e50; }}
+        .value {{ font-weight: bold; }}
+    </style>
+</head>
+<body>
+    <div class="report-box">
+        <h1>Daily Report - {report_data['date']}</h1>
+        <p>Total Bookings: <span class="value">{report_data['total_bookings']}</span></p>
+        <p>Occupancy Rate: <span class="value">{report_data['occupancy_rate']}</span></p>
+        <p>Revenue: <span class="value">{report_data['revenue']}</span></p>
+        <p>Top Booked Room: <span class="value">{report_data['top_room']}</span></p>
+    </div>
+</body>
+</html>
+"""
+
+# Save to file
+with open("resort_daily_report.html", "w") as file:
+    file.write(html_template)
+
+print("HTML report generated successfully!")
